@@ -66,3 +66,20 @@
   - Strict compliance with TDD "Red" phase: tests execute cleanly and fail predictably against the empty CLI stub.
 
 ---
+
+#### Prompt #5: Engine Implementation & Final Documentation (TDD Phase 2)
+- **Timestamp:** 2026-10-14 20:24 IST
+- **User Prompt (Summary):**
+  Act as Senior Python Systems Engineer and implement `alerts.py` to make all 24 unit tests in `tests/test_alerts.py` pass cleanly. Enforce zero third-party dependencies, exact CLI contract, strict stream separation (`stdout` for triggers, `stderr` for warnings, non-zero exit for fatal errors), and single-file design without bloat. Complete `README.md` under 1 page with required sections and update `prompts.md`.
+- **Key Deliverables Produced:**
+  1. [alerts.py](file:///c:/Users/Shrey/Projects/Wissen%20Technology/alerts.py): Complete single-file implementation with:
+     - `parse_and_validate_rules`: JSON schema enforcement, mandatory keys, positive windows, and `short < long` validation.
+     - `parse_and_clean_prices`: UTF-8 BOM stripping, universal newline normalization (CRLF/LF/CR), ragged row handling, poison token filtering (`NaN`, `inf`, `null`), duplicate date resolution (identical deduped, conflicting last-wins), and chronological sorting per ticker.
+     - `evaluate_rules`: Stateful Level crossing evaluation (`prev >= level` to `curr < level`) and exact-precision Moving Average crossover engine using integer cross-multiplication with day $L+1$ boundary gating.
+     - `main`: Deterministic collation and sorting (`date` ASC, `rule_id` ASC) and clean CLI stream handling.
+  2. [README.md](file:///c:/Users/Shrey/Projects/Wissen%20Technology/README.md): Populated strictly under 1 page covering execution, prompts used, AI errors (MA warmup off-by-one, IEEE 754 float drift, newline parsing), and rationale for changes.
+  3. [prompts.md](file:///c:/Users/Shrey/Projects/Wissen%20Technology/prompts.md): Updated audit log for Prompt #5.
+- **Review & Validation Notes:**
+  - Ran test suite: `Ran 24 tests in 0.075s - OK`. All 24 tests pass cleanly with 0 failures and 0 errors.
+
+---
