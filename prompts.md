@@ -32,3 +32,18 @@
   - Established rule to append to this document on all future user turns.
 
 ---
+
+#### Prompt #3: Repository Skeleton & Starter Stubs Setup
+- **Timestamp:** 2026-10-14 15:18 IST
+- **User Prompt (Summary):**
+  Initialize only the lightweight base repository structure and empty starter files without implementation, algorithms, dummy data, or external tooling. Enforce standard library constraints and minimal design ("Volume of code earns nothing").
+- **Key Deliverables Produced:**
+  1. `.gitignore`: Standard Python and test ignore patterns (`__pycache__`, `.pytest_cache`, virtualenvs).
+  2. `README.md`: Structured skeleton with mandatory evaluation sections (*How to run it*, *How you used the assistant*, *What the assistant got wrong*, *What was changed and why*).
+  3. `alerts.py`: Clean executable CLI stub with module docstring specifying signature and scope.
+  4. `tests/test_alerts.py`: Clean test suite stub with module docstring outlining planned test coverage categories.
+- **Review & Validation Notes:**
+  - Kept zero third-party dependencies.
+  - Refrained from generating premature algorithms, dummy data, or build bloat.
+
+---
