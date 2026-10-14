@@ -9,7 +9,10 @@ A standalone, zero-dependency command-line utility for technical market monitori
 **Prerequisites:** Python 3.8+ (Standard Library only; no third-party packages needed).
 
 ```bash
-# Execute CLI
+# Execute CLI with bundled sample dataset
+python alerts.py sample_data/sample_prices.csv sample_data/sample_rules.json
+
+# Execute CLI with custom files
 python alerts.py <prices.csv> <rules.json>
 
 # Execute Test Suite (24 production-grade unit & edge-case tests)
@@ -24,6 +27,7 @@ python -m unittest discover -s tests -p "test_*.py"
 2. **Minimal Architecture Scaffolding:** Set up a clean, zero-bloat repository stub without premature algorithms or third-party libraries.
 3. **Hostile TDD Test Suite Generation:** Instructed the assistant to author 24 comprehensive unit tests in `tests/test_alerts.py` covering encodings (UTF-8 BOM), corrupt feeds (poison NaNs, ragged rows), boundary touches, and SMA warm-up invariants.
 4. **Engine Implementation & Stream Isolation:** Guided the assistant to build `alerts.py` enforcing strict streams separation (clean alert lines on `stdout`, telemetry/warnings on `stderr`, fatal error codes on corrupt configs).
+5. **Realistic Sample Fixture Synthesis:** Created reproducible sample fixtures with embedded real-world anomalies (out-of-order dates, interleaved tickers, duplicate timestamps, poison nulls).
 
 ---
 

@@ -1,0 +1,31 @@
+[
+  {
+    "id": "r1",
+    "instrument": "INFY",
+    "type": "level",
+    "direction": "below",
+    "level": 1500
+  },
+  {
+    "id": "r2",
+    "instrument": "TCS",
+    "type": "ma_cross",
+    "short": 5,
+    "long": 20,
+    "direction": "above"
+  },
+  {
+    "id": "r3",
+    "instrument": "RELIANCE",
+    "type": "level",
+    "direction": "above",
+    "level": 2500
+  },
+  {
+    "id": "r10",
+    "instrument": "INFY",
+    "type": "level",
+    "direction": "below",
+    "level": 1400
+  }
+]
